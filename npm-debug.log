@@ -1,57 +1,65 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node',
-1 verbose cli   '/usr/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'https://github.com/visionmedia/jade.git',
-1 verbose cli   '--verbose' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'i' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.32
 4 verbose node symlink /usr/bin/node
 5 verbose readDependencies using package.json deps
-6 verbose cache add [ 'https://github.com/visionmedia/jade.git', null ]
-7 verbose cache add name=undefined spec="https://github.com/visionmedia/jade.git" args=["https://github.com/visionmedia/jade.git",null]
-8 verbose parsed url { protocol: 'https:',
-8 verbose parsed url   slashes: true,
-8 verbose parsed url   auth: null,
-8 verbose parsed url   host: 'github.com',
-8 verbose parsed url   port: null,
-8 verbose parsed url   hostname: 'github.com',
-8 verbose parsed url   hash: null,
-8 verbose parsed url   search: null,
-8 verbose parsed url   query: null,
-8 verbose parsed url   pathname: '/visionmedia/jade.git',
-8 verbose parsed url   path: '/visionmedia/jade.git',
-8 verbose parsed url   href: 'https://github.com/visionmedia/jade.git' }
-9 silly lockFile 8118a985--github-com-visionmedia-jade-git https://github.com/visionmedia/jade.git
-10 verbose lock https://github.com/visionmedia/jade.git /root/.npm/8118a985--github-com-visionmedia-jade-git.lock
-11 verbose addRemoteTarball [ 'https://github.com/visionmedia/jade.git', null ]
-12 info retry fetch attempt 1 at 19:24:27
-13 verbose fetch to= /tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git
-14 http GET https://github.com/visionmedia/jade.git
-15 http 200 https://github.com/visionmedia/jade.git
-16 verbose tar unpack /tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git
-17 silly lockFile bed20635--com-visionmedia-jade-git-unpack tar:///tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git-unpack
-18 verbose lock tar:///tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git-unpack /root/.npm/bed20635--com-visionmedia-jade-git-unpack.lock
-19 silly lockFile 51f7e146--github-com-visionmedia-jade-git tar:///tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git
-20 verbose lock tar:///tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git /root/.npm/51f7e146--github-com-visionmedia-jade-git.lock
-21 silly gunzTarPerm modes [ '755', '644' ]
-22 error not a package /tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git
-23 silly lockFile bed20635--com-visionmedia-jade-git-unpack tar:///tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git-unpack
-24 silly lockFile bed20635--com-visionmedia-jade-git-unpack tar:///tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git-unpack
-25 silly lockFile 51f7e146--github-com-visionmedia-jade-git tar:///tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git
-26 silly lockFile 51f7e146--github-com-visionmedia-jade-git tar:///tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git
-27 silly lockFile 8118a985--github-com-visionmedia-jade-git https://github.com/visionmedia/jade.git
-28 silly lockFile 8118a985--github-com-visionmedia-jade-git https://github.com/visionmedia/jade.git
-29 error Error: ENOENT, open '/tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git-unpack/package.json'
-30 error If you need help, you may report this *entire* log,
-30 error including the npm and node versions, at:
-30 error     <http://github.com/npm/npm/issues>
-31 error System Linux 3.2.0-4-amd64
-32 error command "/usr/bin/node" "/usr/bin/npm" "install" "https://github.com/visionmedia/jade.git" "--verbose"
-33 error cwd /home/sghose/projs/feedme
-34 error node -v v0.10.32
-35 error npm -v 1.4.28
-36 error path /tmp/npm-8278-GmRMhogx/github.com/visionmedia/jade.git-unpack/package.json
-37 error code ENOENT
-38 error errno 34
-39 verbose exit [ 34, true ]
+6 verbose install where, deps [ '/home/sghose/projs/feedme', [ 'express' ] ]
+7 info preinstall FeedMe@0.0.1
+8 verbose readDependencies using package.json deps
+9 verbose already installed skipping express@~4.9.x /home/sghose/projs/feedme
+10 silly resolved []
+11 info build /home/sghose/projs/feedme
+12 verbose linkStuff [ false, false, false, '/home/sghose/projs' ]
+13 info linkStuff FeedMe@0.0.1
+14 verbose linkBins FeedMe@0.0.1
+15 verbose linkMans FeedMe@0.0.1
+16 verbose rebuildBundles FeedMe@0.0.1
+17 verbose rebuildBundles [ '.bin', 'debug', 'express', 'jade' ]
+18 verbose rebuild bundle /home/sghose/projs/feedme/node_modules/debug
+19 info build /home/sghose/projs/feedme/node_modules/debug
+20 info preinstall debug@2.0.0
+21 verbose linkStuff [ false, false, false, '/home/sghose/projs/feedme/node_modules' ]
+22 info linkStuff debug@2.0.0
+23 verbose linkBins debug@2.0.0
+24 verbose linkMans debug@2.0.0
+25 verbose rebuildBundles debug@2.0.0
+26 verbose rebuildBundles [ 'ms' ]
+27 info install debug@2.0.0
+28 info postinstall debug@2.0.0
+29 verbose rebuild bundle /home/sghose/projs/feedme/node_modules/jade
+30 info build /home/sghose/projs/feedme/node_modules/jade
+31 info preinstall jade@1.7.0
+32 verbose linkStuff [ false, false, false, '/home/sghose/projs/feedme/node_modules' ]
+33 info linkStuff jade@1.7.0
+34 verbose linkBins jade@1.7.0
+35 verbose link bins [ { jade: './bin/jade.js' },
+35 verbose link bins   '/home/sghose/projs/feedme/node_modules/.bin',
+35 verbose link bins   false ]
+36 verbose linkMans jade@1.7.0
+37 verbose rebuildBundles jade@1.7.0
+38 verbose rebuildBundles [ '.bin',
+38 verbose rebuildBundles   'character-parser',
+38 verbose rebuildBundles   'commander',
+38 verbose rebuildBundles   'constantinople',
+38 verbose rebuildBundles   'mkdirp',
+38 verbose rebuildBundles   'monocle',
+38 verbose rebuildBundles   'transformers',
+38 verbose rebuildBundles   'void-elements',
+38 verbose rebuildBundles   'with' ]
+39 error Error: EACCES, unlink '/home/sghose/projs/feedme/node_modules/.bin/jade'
+39 error  { [Error: EACCES, unlink '/home/sghose/projs/feedme/node_modules/.bin/jade']
+39 error   errno: 3,
+39 error   code: 'EACCES',
+39 error   path: '/home/sghose/projs/feedme/node_modules/.bin/jade' }
+40 error Please try running this command again as root/Administrator.
+41 error System Linux 3.2.0-4-amd64
+42 error command "/usr/bin/node" "/usr/bin/npm" "i"
+43 error cwd /home/sghose/projs/feedme
+44 error node -v v0.10.32
+45 error npm -v 1.4.28
+46 error path /home/sghose/projs/feedme/node_modules/.bin/jade
+47 error code EACCES
+48 error errno 3
+49 error stack Error: EACCES, unlink '/home/sghose/projs/feedme/node_modules/.bin/jade'
+50 verbose exit [ 3, true ]
