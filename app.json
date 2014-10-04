@@ -1,7 +1,7 @@
 {
-  "name": "Node.js Getting Started",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "name": "FeedMe",
+  "description": "An app that gets me food now!",
+  "repository": "https://github.com/srijansood/feedMe",
+  "logo": "http://thecatapi.com/api/images/get?format=src&type=gif",
   "keywords": ["node", "express", "static"]
 }

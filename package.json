@@ -1,6 +1,6 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.2",
+  "name": "FeedMe",
+  "version": "0.0.1",
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/srijansood/feedMe"
   },
   "keywords": [
-    "node",
-    "heroku",
-    "express"
+    "express",
+  "feedme",
+  "food"
   ],
   "license": "MIT"
 }
