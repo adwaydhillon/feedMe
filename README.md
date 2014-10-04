@@ -1,3 +1,5 @@
+App Premise: Feed me <b>now!</b>
+
 # python-getting-started
 
 A barebones Python app, which can easily be deployed to Heroku.
