@@ -106,7 +106,7 @@ mongoose.connect('mongodb://admin:admin@ds043170.mongolab.com:43170/calhacks-fee
         res.render('index',{'user':req.user.username});
     });
 
-app.get('/',function(req,res){req.redirect('index');});
+app.get('/',function(req,res){res.redirect('index');});
 
 app.post('/register', function(req, res) {
     ordrin_api.create_account({
