@@ -10,6 +10,7 @@
     "ee-first": "^1.0.5",
     "express": "^4.9.5",
     "finalhandler": "^0.3.0",
+    "jade": "^1.7.0",
     "utils-merge": "^1.0.0"
   },
   "engines": {
