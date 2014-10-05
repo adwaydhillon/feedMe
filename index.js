@@ -148,21 +148,22 @@ app.post('/register', function(req, res) {
 app.get('/del_list', function(req, res) {
     ordrin_api.delivery_list({
         datetime: "ASAP",
-        addr: "5000 forbes avenue",
-        city: "pittsburgh",
-        zip: "15289"
+        addr: "120 north avenue",
+        city: "atlanta",
+        zip: "30332"
     }, function(err,data){
         var rlist = [ ];
         if (err){
             console.error(err);
         }
+        var max_amt = 25;
         for (var i = 0; i < data.length; i++) {
             if ( (data[i].is_delivering != 0) && (data[i].mino <= max_amt - 8)) {
                 rlist.push(data[i].id);
             } // We have list of resteraunts delivering.
         }
         var rand_index = Math.random() * rlist.length;
-        rand_index = data[rand_index].id;
+        rand_index =data[rand_index].id;
  
     }, function(err,data){
         ordrin_api.restaraunt_details({
@@ -172,6 +173,7 @@ app.get('/del_list', function(req, res) {
             var dish_found = false;
             var cat = 0;
             var dish = 0;
+            var resname = data.name;
             while(!dish_found){
                 cat = Math.random() * data.menu.length;
                 dish = Math.random() * (data.menu[cat].children.length);
@@ -198,14 +200,15 @@ app.get('/del_list', function(req, res) {
                 });
             });
         });
+
+res.send('Ordered!',resname);
     });
-res.send('Ordered!');
 });
  
  
 //Uber part
 app.get('/takemethere', function(req, res) {
-    ordrin_api.delivery_list({
+    /*ordrin_api.delivery_list({
         datetime: "ASAP",
         addr: "5000 forbes avenue",
         city: "Pittsburgh",
@@ -221,22 +224,24 @@ app.get('/takemethere', function(req, res) {
             } // We have list of resteraunts delivering.
         }
         var rand_index = Math.random() * rlist.length;
-        rand_index = data[rand_index].id; //rest id
-        ordrin_api.restaurant_details({
-            rid: rand_index
-        }, function(err,data) {
-            lat = data.latitude;
-            long = data.longitude;
-            email= "jay@gmail.com";
-            first_name = "jay";
-            last_name = "smith";
-            zip = "15289";
-            phone = "1111111111";
+        //rand_index = data[rand_index].id; //rest id
+        //ordrin_api.restaurant_details({
+        //    rid: rand_index
+        //}, function(err,data) {
+        //    lat = data.latitude;
+        //    long = data.longitude;
+        //    email= "jay@gmail.com";
+        //    first_name = "jay";
+        //    last_name = "smith";
+        //    zip = "15289";
+        //    phone = "1111111111";
             var uber_url = "https://m.uber.com/sign-up?client_id=RboV_QeRP_MMj2xXrfsK2zD5C91IFV1l&first_name="+first_name+"&last_name="+last_name+"&email="+email+"&country_code=us&mobile_phone="+phone+"&zipcode="+zip+"&product_id=b5e74e96-5d27-4caf-83e9-54c030cd6ac5&dropoff_latitude="+lat+"&dropoff_longitude="+long;
             window.open(uber_url);
         });
     });
-
+*/
+            var uber_url = "https://m.uber.com/sign-up?client_id=RboV_QeRP_MMj2xXrfsK2zD5C91IFV1l&first_name=Srijan&last_name=Sood&email=srijansood@gmail.com&country_code=us&mobile_phone=4049407775&zipcode=30332&product_id=b5e74e96-5d27-4caf-83e9-54c030cd6ac5&dropoff_latitude=37.867212&dropoff_longitude=--122.258328";
+            res.redirect( uber_url);
 res.send('Ordered!');
 });
  
