@@ -4,7 +4,13 @@ block append headcontent
 block prepend bodycontent
         div(class="wrapper")
             div(class="container" style="height:100%")
-                
+                div(style="margin-left:auto;margin-right:0px;width:33%;")
+                    form(action="/login" class="pure-form pure-form-aligned")
+                        fieldset
+                            div(class="pure-control-group")
+                                input(type="email",placeholder="Email")
+                                input(type="password", placeholder="Password")
+                                button(type="submit",class="pure-button pure-button-primary") Sign In
                 div(style="height:30%")
                 div
                     nav
