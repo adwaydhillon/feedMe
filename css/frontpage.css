@@ -43,8 +43,7 @@
     speak: none;
 }
 
-.icon-home:after     { content: "\2302"; } 
-.icon-cog:after      { content: "\2699"; } 
+
 
 .nav {
     list-style: none;
