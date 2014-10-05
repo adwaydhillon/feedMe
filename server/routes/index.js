@@ -20,7 +20,7 @@ router.post('/register', function(req, res) {
         ordrin_api.create_addr({
             email: req.body.email,
             current_password: req.body.pwd,
-            nick: "main",
+            nick: "addr_main",
             phone: req.body.phone_no,
             zip: req.body.zip,
             addr: req.body.addr,
@@ -29,7 +29,7 @@ router.post('/register', function(req, res) {
         }, function(err, data){
             ordrin_api.create_cc({
                 email: req.body.email,
-                nick: "main",
+                nick: "card_main",
                 card_number: req.body.card_no,
                 card_cvc: req.body.cvc,
                 card_expiry: req.body.expiry,
@@ -41,7 +41,7 @@ router.post('/register', function(req, res) {
                 current_password: req.body.pwd
             }, function(err, data){
                 res.json({
-                    confirm: "0"
+                    account_confirm: "1"
                 });
             });
         });
@@ -68,20 +68,37 @@ router.post('/del_list', function(req, res) {
 
     }, function(err,data){
         ordrin_api.restaraunt_details({
-            rid: rand;
+            rid: rand
         }, function(err,data){
-                var price = 0;
-                var dish_found = false;
-                var cat = 0;
-                var dish = 0;
-                while(!dish_found){
-                    cat = Math.random() * data.menu.length;
-                    dish = Math.random() * (data.menu[cat].children.length);
-                    if ((data.menu[cat].children[dish].is_orderable == "1") && ((data.menu[cat].children[dish].price <= user_max - 8) && (menu[cat].children[dish].price >= 7 ))) {
-                        dish_found = true;
-                    }
-                } //dish index has been found
-                
+            var price = 0;
+            var dish_found = false;
+            var cat = 0;
+            var dish = 0;
+            while(!dish_found){
+                cat = Math.random() * data.menu.length;
+                dish = Math.random() * (data.menu[cat].children.length);
+                if ((data.menu[cat].children[dish].is_orderable == "1") && ((data.menu[cat].children[dish].price <= user_max - 8) && (menu[cat].children[dish].price >= 7 ))) {
+                    dish_found = true;
+                }
+            } //dish index has been found
+            var tray = menu[cat].children[dish].id + "/1";
+        }, function (err,data){
+            ordrin_api.order_user({
+                rid: rid,
+                tray: tray,
+                tip: 0,
+                first_name: req.body.fn,
+                last_name: req.body.ln,
+                email: req.body.email,
+                current_password: req.body.pwd,
+                nick: "addr_main",
+                card_nick: "card_main",
+                delivery_date: "ASAP"
+            }, function(err, data){
+                res.json({
+                    order_confirm: "1"
+                });
+            });
         });
     });
 });
