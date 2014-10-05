@@ -36,6 +36,8 @@
     "grunt-autoprefixer": "^1.0.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-postcss": "^0.1.0",
-    "grunt-sass": "^0.14.2"
+    "grunt-sass": "^0.14.2",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0"
   }
 }
