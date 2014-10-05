@@ -63,15 +63,28 @@ router.post('/del_list', function(req, res) {
                 rlist.push(data[i].id);
             } // We have list of resteraunts delivering.
         }
-        var rand_index = Math.random() * rlist.length
+        var rand_index = Math.random() * rlist.length;
         rand_index = data[rand_index].id;
 
-        ordrin_api.restaraunt_details()
+    }, function(err,data){
+        ordrin_api.restaraunt_details({
+            rid: rand;
+        }, function(err,data){
+                var price = 0;
+                var dish_found = false;
+                var cat = 0;
+                var dish = 0;
+                while(!dish_found){
+                    cat = Math.random() * data.menu.length;
+                    dish = Math.random() * (data.menu[cat].children.length);
+                    if ((data.menu[cat].children[dish].is_orderable == "1") && ((data.menu[cat].children[dish].price <= user_max - 8) && (menu[cat].children[dish].price >= 7 ))) {
+                        dish_found = true;
+                    }
+                } //dish index has been found
+                
+        });
     });
 });
 
-function pickRandomRestaurant(cb){
-
-}
 
 module.exports = router;
