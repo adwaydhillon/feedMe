@@ -8,32 +8,28 @@
     font-weight: normal; font-style: normal;
 }
 
-.Aligner {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+.container:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url('http://content.seamless.com/swdesign/img/background/Seamless-Food-Delivery_stepOne-Grilled-Cheese_13.jpg');
+width:100%;
+height:100%;
+    -webkit-filter: blur(5px);
+
+            filter: blur(5px);
 }
 
-.Aligner-item {
-    max-width: 50%;
-}
-
-.Aligner-item--top {
-    -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-            align-self: flex-start;
-}
-
-.Aligner-item--bottom {
-    -webkit-align-self: flex-end;
-        -ms-flex-item-align: end;
-            align-self: flex-end;
+.container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 [class*=" icon-"] {
@@ -45,7 +41,8 @@
 
 i.fa
 {
-    padding-top:45%;    
+    padding-top:42%;    
+    font-size:2em;
 }
 
 .nav {
@@ -63,8 +60,11 @@ i.fa
 .nav a {
     display: block;
     background-color: #f7f7f7;
+    /*
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+    */
     background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
+    
     color: #a7a7a7;
     margin: 36px;
     width: 144px;
@@ -72,8 +72,9 @@ i.fa
     position: relative;
     text-align: center;
     line-height: 144px;
-    border-radius: 50%;
+    border-radius:50%;
     box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+    
 }
 
 
@@ -86,7 +87,6 @@ i.fa
 .nav li:before {
     content: "";
     display: block;
-    border-bottom: 1px solid #fff;
     width: 100%;
     height: 1px;
     position: absolute;
@@ -97,8 +97,6 @@ i.fa
 .nav a:before {
     content: "";
     display: block;
-    background: #fff;
-    border-top: 2px solid #ddd;
     position: absolute;
     top: -18px;
     left: -18px;
@@ -106,5 +104,28 @@ i.fa
     right: -18px;
     z-index: -1;
     border-radius: 50%;
-    box-shadow: inset 0px 8px 48px #ddd;
+    /*box-shadow: inset 0px 8px 48px #ddd;*/
 }
+
+.wrapper {
+      /* set the height of the element which contains what you want to center */
+      height: 100%;
+        /* these styles are optional, to set width horizontally center the page */
+        max-width: 500px;
+          margin: 0 auto;
+      }
+      .wrapper:before, .container {
+            /* these are the important styles for the centered element: */
+            display: inline-block;
+              vertical-align: middle;
+          }
+          .wrapper:before {
+                /* this is the important part */
+                content: '';
+                  display: inline-block;
+                    width: 0;
+                      height: 100%;
+                        vertical-align: middle;
+                          /* this just takes care of whitespace added by having display:inline-block (there are other methods) */
+                          margin-left: -0.25em;
+                      }

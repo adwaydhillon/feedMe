@@ -1,17 +1,16 @@
-
-html
-    head
+extends base
+block append headcontent
         meta(name="viewport",content='width=device-width,initial-scale=1')
-    body
-        div(style="height:25%")
-        div(class="Aligner")
-            nav(class="Aligner-item")
-                ul(class="nav")
-                    each val in ["fa-cutlery","fa-automobile"]
-                        li          
-                            a(href='#')
-                                i(class="fa "+val)
+block prepend bodycontent
+        div(class="wrapper")
+            div(class="container" style="height:100%")
+                div(style="height:30%")
+                div
+                    nav
+                        ul(class="nav")
+                            each link,ic in {"fa-cutlery":'order',"fa-automobile":'uber'}
+                                li          
+                                    a(href=link,data-anijs="if: mouseover, do: rotateIn animated")
+                                        i(class="fa "+ic)
 
-    link(rel='stylesheet', href = 'http://yui.yahooapis.com/pure/0.5.0/pure-min.css')
-    link(rel='stylesheet', href = '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
-    link(rel='stylesheet', href = '/css/frontpage.css')
+    
