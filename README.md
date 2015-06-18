@@ -40,5 +40,5 @@ FeedMe
 ==========
 
 Here are some screenshots of the app:
-![ScreenShot1](http://snag.gy/zOPxX.jpg)
+![ScreenShot1](http://snag.gy/ReuyE.jpg)
 ![ScreenShot2](http://snag.gy/EEk3X.jpg)
