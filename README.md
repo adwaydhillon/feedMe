@@ -42,3 +42,6 @@ FeedMe
 Here are some screenshots of the app:
 ![ScreenShot1](http://snag.gy/ReuyE.jpg)
 ![ScreenShot2](http://snag.gy/EEk3X.jpg)
+![ScreenShot3](http://snag.gy/hmOpa.jpg)
+![ScreenShot4](http://snag.gy/HRMDk.jpg)
+![ScreenShot5](http://snag.gy/hboVq.jpg)
